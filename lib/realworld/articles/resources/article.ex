@@ -161,6 +161,7 @@ defmodule Realworld.Articles.Article do
     many_to_many :favorites, Realworld.Accounts.User do
       api Realworld.Accounts
       through Realworld.Articles.Favorite
+      join_relationship :favorite_links
       source_attribute_on_join_resource :article_id
       destination_attribute_on_join_resource :user_id
     end
